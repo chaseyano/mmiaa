@@ -16,6 +16,12 @@
       display: flex;
       flex-direction: column;
     }
+    html, body {
+  height: 100vh; /* Viewport height */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrolling */
+}
 
     header {
       padding: 20px 0;
@@ -72,7 +78,7 @@
 
     .section {
       font-size: 24px;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       cursor: pointer;
       font-weight: bold;
 
@@ -135,19 +141,77 @@
 }
 .content-container {
   margin: 0 auto;
-  max-width: 390px; /* Set the max-width to simulate the screen width */
-  /* Additional styling as required */
+  max-width: 390px; /* Keep your width limit */
+  overflow-y: auto; /* Only if you want the content itself to be scrollable */
+  height: calc(100vh - 60px); /* Adjust based on the actual footer height */
+  padding-bottom: 60px; /* Give some space for the footer */
 }
 
+
+.mmiaa-scroll-container {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  width: 100vw; /* Ensure the container spans the full viewport width */
+}
+
+.header-text {
+  display: inline-block;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  /* Initially hidden, will fade in */
+  opacity: 0; /* Keep this for the fade-in effect */
+  animation: scroll-infinite 20s linear infinite;
+}
+
+@keyframes scroll-infinite {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Adjust the fade-in effect as needed */
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 5px 0;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+
+.footer-link {
+  color: lightgray; /* Light gray link to match your existing design */
+  text-decoration: none; /* Removes underline from links */
+  font-size: 12px;
+}
+
+.footer-link:hover {
+  text-decoration: underline; /* Adds underline on hover for better UX */
+}
 
   </style>
 </head>
 <body>
   <div class="content-container">
 
-  <header>
-    <h1 class="header-text" id="mmiaa">MMIAA</h1>
-  </header>
+    <header>
+      <div class="mmiaa-scroll-container">
+        <h1 class="header-text" id="mmiaa">MMMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA </h1>
+      </div>
+    </header>
+    
   <div class="text-container">
     <div class="big-text" id="fade-out">Making Money in an Artform</div>
   </div>
@@ -172,6 +236,10 @@
         <li class="artists"><a href="#" class="light-gray-link">CH33$3C4K3</a></li>
       </ul>
     </div>
+    <footer>
+      <p><a href="mailto:connect@mmiaa.org" class="footer-link">connect@mmiaa.org</a></p>
+    </footer>
+    
   </div>
   <script>
     // JavaScript to fade out the text after about a second
