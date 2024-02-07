@@ -21,29 +21,36 @@
       padding: 20px 0;
       background-color: black;
       font-size: 36px;
+
     }
 
     .header-text {
-      font-size: 40px;
-      font-weight: bold;
-      margin: 0;
-    }
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1s; /* Smooth transition for opacity change */
+
+}
 
     .text-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      flex-grow: 1;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center children */
+  align-items: center; /* Horizontally center children */
+  flex-grow: 1;
+  height: 100%; /* Fill available vertical space */
+}
 
-    .big-text {
-      font-size: 36px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      transition: opacity 1s; /* Smooth transition for opacity change */
+.big-text {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  transition: opacity 1s; /* Smooth transition for opacity change */
+  margin-top: 300px;
+}
 
-    }
+
 
     .medium-text {
       font-size: 24px;
@@ -65,53 +72,112 @@
 
     .section {
       font-size: 24px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       cursor: pointer;
+      font-weight: bold;
+
     }
 
     @keyframes rainAndShake {
-  0% { 
-    transform: translateY(-10%) rotate(0deg); 
-    opacity: 1; 
-  }
-  50% { 
-    transform: translateY(45vh) rotate(5deg); 
-  }
-  100% { 
-    transform: translateY(90vh) rotate(-5deg); 
-    opacity: 0; 
-  }
+      0% { 
+        transform: translateY(-10%) rotate(0deg); 
+        opacity: 1; 
+      }
+      50% { 
+        transform: translateY(45vh) rotate(5deg); 
+      }
+      100% { 
+        transform: translateY(90vh) rotate(-5deg); 
+        opacity: 0; 
+      }
+    }
+
+    .dollar-sign {
+      position: fixed;
+      color: white;
+      font-size: 24px;
+      opacity: 0; /* Start fully transparent, but quickly become visible */
+      animation: rainAndShake linear forwards;
+    }
+
+    .paragraph-section {
+      margin: 0 20px; /* Add margin for mobile */
+    }
+
+    .bold-text {
+      font-weight: bold;
+    }
+
+    .light-gray-link {
+      color: lightgray;
+      text-decoration: none;
+      font-style: italic;
+      font-family: 'Helvetica', sans-serif;
+
+    }
+
+    .centered-list {
+      text-align: center;
+      list-style: none;
+      padding: 0; /* Remove default padding */
+      
+    }
+
+    .gray-link {
+      color: lightgray;
+      text-decoration: none;
+    }
+    .artists {
+      padding: 10px 10px;
+    }
+    .fade-in {
+  opacity: 1 !important;
+}
+.content-container {
+  margin: 0 auto;
+  max-width: 390px; /* Set the max-width to simulate the screen width */
+  /* Additional styling as required */
 }
 
-.dollar-sign {
-  position: fixed;
-  color: white;
-  font-size: 24px;
-  opacity: 0; /* Start fully transparent, but quickly become visible */
-  animation: rainAndShake linear forwards;
-}
-
- 
 
   </style>
 </head>
 <body>
+  <div class="content-container">
+
   <header>
-    <h1 class="header-text">MMIAA</h1>
+    <h1 class="header-text" id="mmiaa">MMIAA</h1>
   </header>
   <div class="text-container">
     <div class="big-text" id="fade-out">Making Money in an Artform</div>
   </div>
   <div class="section-list">
-    <div class="section">About Me</div>
-    <div class="section">Contact</div>
-    <div class="section">Purchase</div>
+    <div class="section">FILM & $TILL$</div>
+    <div class="paragraph-section">
+      <p>We own an extensive collection of <span class="bold-text">exclusive</span> and <span class="bold-text">experimental</span> films and imagery. With years of video editing experience in a one-of-a-kind <span class="bold-text">psychedelic</span> style, we will provide <span class="bold-text">hand-curated</span> and assembled imagery that will enhance the artistic vision and <span class="bold-text">marketability</span> of your art.</p>
+      <p><span class="bold-text">Fire</span> music only.</p>
+      <p><a href="samples.html" class="light-gray-link">Samples and rates here.</a></p>
+    </div>
+    <div class="section">KNOIRE</div>
+    <div class="paragraph-section">
+      <p>KNOIRE is an interview series hosted by artist-turned-interviewer PDF. Through a series of <span class="bold-text">casual</span> Zoom-talks with artists across the underground, we seek to <span class="bold-text">connect</span> and empower <span class="bold-text">  Black</span> artists.</p>
+      <p><a href="https://www.youtube.com/watch?v=VIDEO_ID" class="light-gray-link">Watch here</a> | <a href="form.html" class="light-gray-link">Wanna talk?</a></p>
+    </div>
+    <div class="section">ARTI$T$</div>
+    <div class="paragraph-section">
+      <p>MMIAA seeks to unite the experimental <span class="bold-text">hip-hop</span> which inspired us with the <span class="bold-text">endless breadth</span> of sounds that makes up modern music with the ultimate priority of <span class="bold-text">Making Money in an Artform.</span></p>
+      <ul class="centered-list">
+        <li class="artists"><a href="#" class="light-gray-link">naye & myaliah</a></li>
+        <li class="artists"><a href="#" class="light-gray-link">PDF</a></li>
+        <li class="artists"><a href="#" class="light-gray-link">CH33$3C4K3</a></li>
+      </ul>
+    </div>
   </div>
   <script>
     // JavaScript to fade out the text after about a second
     setTimeout(function() {
       document.getElementById('fade-out').style.opacity = '0';
-      // After fade-out, show the section list
+      // After fade-out, show the section listx 
       setTimeout(function() {
         document.querySelector('.text-container').style.display = 'none';
         document.querySelector('.section-list').style.opacity = '1';
@@ -119,28 +185,33 @@
     }, 1000); // 1000 milliseconds = 1 second
 
     setTimeout(function() {
-  for (let i = 0; i < 200 ; i++) {
-    const dollarSign = document.createElement('div');
-    dollarSign.classList.add('dollar-sign');
-    dollarSign.textContent = '$';
-    dollarSign.style.left = `${Math.random() * window.innerWidth}px`;
-    dollarSign.style.top = '-10%'; // Start just above the viewport
+      for (let i = 0; i < 200 ; i++) {
+        const dollarSign = document.createElement('div');
+        dollarSign.classList.add('dollar-sign');
+        dollarSign.textContent = '$';
+        dollarSign.style.left = `${Math.random() * window.innerWidth}px`;
+        dollarSign.style.top = '-10%'; // Start just above the viewport
 
-    // Apply a random duration for each dollar sign to vary their speed slightly
-    const animationDuration = 2  + Math.random() * 3; // Between 5 and 7 seconds
-    dollarSign.style.animationDuration = `${animationDuration}s`;
+        // Apply a random duration for each dollar sign to vary their speed slightly
+        const animationDuration = 2  + Math.random() * 3; // Between 5 and 7 seconds
+        dollarSign.style.animationDuration = `${animationDuration}s`;
 
-    document.body.appendChild(dollarSign);
-  }
+        document.body.appendChild(dollarSign);
+      }
 
-  // Transition handling for fading out text and showing section list
-  document.getElementById('fade-out').style.opacity = '0';
-  setTimeout(function() {
-    document.querySelector('.text-container').style.display = 'none';
-    document.querySelector('.section-list').style.opacity = '1';
-  }, 1000);
-}, 1000);
-
+      // Transition handling for fading out text and showing section list
+      document.getElementById('fade-out').style.opacity = '0';
+      setTimeout(function() {
+        document.querySelector('.text-container').style.display = 'none';
+        document.querySelector('.section-list').style.opacity = '1';
+      }, 1000);
+    }, 1000);
+    setTimeout(function() {
+  document.getElementById('mmiaa').classList.add('fade-in');
+}, 1000); // Adjust the delay as needed
   </script>
+  </div>
+
 </body>
+
 </html>
