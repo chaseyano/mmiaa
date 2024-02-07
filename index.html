@@ -33,21 +33,21 @@
 
 }
 
-    .text-container {
+.text-container {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Vertically center children */
-  align-items: center; /* Horizontally center children */
+  justify-content: center; /* Keeps content vertically centered */
+  align-items: center; /* Keeps content horizontally centered */
   flex-grow: 1;
-  height: 100%; /* Fill available vertical space */
+  padding: 20px 0; /* Adjusted padding for better spacing */
+  min-height: 70vh; /* Ensure it takes at least the full height of the viewport */
 }
 
 .big-text {
   font-size: 28px;
   font-weight: bold;
-  margin-bottom: 10px;
-  transition: opacity 1s; /* Smooth transition for opacity change */
-  margin-top: 300px;
+  transition: opacity 1s;
+  padding: 0; /* Reduced or removed the large bottom padding */
 }
 
 
