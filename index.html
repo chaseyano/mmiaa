@@ -14,8 +14,19 @@
       text-align: center;
       height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 20px 0;
+      background-color: black;
+      font-size: 36px;
+    }
+
+    .header-text {
+      font-size: 40px;
+      font-weight: bold;
+      margin: 0;
     }
 
     .text-container {
@@ -23,29 +34,113 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      flex-grow: 1;
     }
 
     .big-text {
-      font-size: 48px;
+      font-size: 36px;
       font-weight: bold;
       margin-bottom: 10px;
+      transition: opacity 1s; /* Smooth transition for opacity change */
+
     }
 
     .medium-text {
       font-size: 24px;
       margin-bottom: 10px;
+      opacity: 1; /* Initial opacity set to 1 */
     }
 
     .small-text {
       font-size: 18px;
     }
+
+    .section-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0; /* Initially hidden */
+      transition: opacity 1s; /* Smooth transition for opacity change */
+    }
+
+    .section {
+      font-size: 24px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    @keyframes rainAndShake {
+  0% { 
+    transform: translateY(-10%) rotate(0deg); 
+    opacity: 1; 
+  }
+  50% { 
+    transform: translateY(45vh) rotate(5deg); 
+  }
+  100% { 
+    transform: translateY(90vh) rotate(-5deg); 
+    opacity: 0; 
+  }
+}
+
+.dollar-sign {
+  position: fixed;
+  color: white;
+  font-size: 24px;
+  opacity: 0; /* Start fully transparent, but quickly become visible */
+  animation: rainAndShake linear forwards;
+}
+
+ 
+
   </style>
 </head>
 <body>
+  <header>
+    <h1 class="header-text">MMIAA</h1>
+  </header>
   <div class="text-container">
-    <div class="big-text">MMIAA</div>
-    <div class="medium-text">Making Money in an Artform</div>
-    <div class="small-text">$$$ soon...</div>
+    <div class="big-text" id="fade-out">Making Money in an Artform</div>
   </div>
+  <div class="section-list">
+    <div class="section">About Me</div>
+    <div class="section">Contact</div>
+    <div class="section">Purchase</div>
+  </div>
+  <script>
+    // JavaScript to fade out the text after about a second
+    setTimeout(function() {
+      document.getElementById('fade-out').style.opacity = '0';
+      // After fade-out, show the section list
+      setTimeout(function() {
+        document.querySelector('.text-container').style.display = 'none';
+        document.querySelector('.section-list').style.opacity = '1';
+      }, 1000); // 1000 milliseconds = 1 second
+    }, 1000); // 1000 milliseconds = 1 second
+
+    setTimeout(function() {
+  for (let i = 0; i < 200 ; i++) {
+    const dollarSign = document.createElement('div');
+    dollarSign.classList.add('dollar-sign');
+    dollarSign.textContent = '$';
+    dollarSign.style.left = `${Math.random() * window.innerWidth}px`;
+    dollarSign.style.top = '-10%'; // Start just above the viewport
+
+    // Apply a random duration for each dollar sign to vary their speed slightly
+    const animationDuration = 2  + Math.random() * 3; // Between 5 and 7 seconds
+    dollarSign.style.animationDuration = `${animationDuration}s`;
+
+    document.body.appendChild(dollarSign);
+  }
+
+  // Transition handling for fading out text and showing section list
+  document.getElementById('fade-out').style.opacity = '0';
+  setTimeout(function() {
+    document.querySelector('.text-container').style.display = 'none';
+    document.querySelector('.section-list').style.opacity = '1';
+  }, 1000);
+}, 1000);
+
+  </script>
 </body>
 </html>
