@@ -5,234 +5,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MMIAA</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Times New Roman', Times, serif;
-      background-color: black;
-      color: white;
-      text-align: center;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    html, body {
-  height: 100vh; /* Viewport height */
+body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Prevent scrolling */
+  font-family: 'Times New Roman', Times, serif;
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.content-container {
+  max-width: 390px;
+  height: calc(100vh - 60px);
+  padding-bottom: 60px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin: auto; /* Center the container */
+}
+
+
+/* For Firefox */
+.content-container {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* For IE and Edge */
+.content-container {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 
     header {
       padding: 20px 0;
       background-color: black;
       font-size: 36px;
-
+      position: relative;
+      cursor: pointer; /* Added cursor pointer */
     }
-
+    .mmiaa-scroll-container {
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+      width: 100vw;
+    }
     .header-text {
-  font-size: 40px;
-  font-weight: bold;
-  margin: 0;
-
-}
-
-.text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Keeps content vertically centered */
-  align-items: center; /* Keeps content horizontally centered */
-  flex-grow: 1;
-  padding: 20px 0; /* Adjusted padding for better spacing */
-  min-height: 70vh; /* Ensure it takes at least the full height of the viewport */
-}
-
-.big-text {
-  font-size: 28px;
-  font-weight: bold;
-  padding: 0; /* Reduced or removed the large bottom padding */
-}
-
-
-
-    .medium-text {
+      display: inline-block;
+      font-size: 40px;
+      font-weight: bold;
+      margin: 0;
+      opacity: 1;
+      animation: scroll-infinite 20s linear infinite;
+    }
+    @keyframes scroll-infinite {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    footer {
+      width: 100%;
+      padding: 5px 0;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+    }
+    .footer-link {
+      color: lightgray;
+      text-decoration: none;
+      font-size: 12px;
+    }
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+    .section {
       font-size: 24px;
-      margin-bottom: 10px;
-      opacity: 1; /* Initial opacity set to 1 */
+      margin: 20px 0;
+      font-weight: bold;
     }
-
-    .small-text {
-      font-size: 18px;
-    }
-
-    .section-list {
+    /* Style for video container */
+    .video-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-        padding-bnot
+      gap: 20px; /* Space between videos */
     }
-
-    .section {
-      font-size: 24px;
-      margin-bottom: 5px;
-      cursor: pointer;
-      font-weight: bold;
-
+    /* Style for videos */
+    iframe {
+      width: 100%; /* Full width of the container */
+      aspect-ratio: 1 / 1; /* Square aspect ratio */
     }
-
-    @keyframes rainAndShake {
-      0% { 
-        transform: translateY(-10%) rotate(0deg); 
-        opacity: 1; 
-      }
-      50% { 
-        transform: translateY(45vh) rotate(5deg); 
-      }
-      100% { 
-        transform: translateY(90vh) rotate(-5deg); 
-        opacity: 0; 
-      }
-    }
-
-    .dollar-sign {
-      position: fixed;
-      color: white;
-      font-size: 24px;
-      opacity: 0; /* Start fully transparent, but quickly become visible */
-      animation: rainAndShake linear forwards;
-    }
-
-    .paragraph-section {
-      margin: 0 20px; /* Add margin for mobile */
-    }
-
-    .bold-text {
-      font-weight: bold;
-    }
-
-    .light-gray-link {
-      color: lightgray;
-      text-decoration: none;
-      font-style: italic;
-      font-family: 'Helvetica', sans-serif;
-
-    }
-
-    .centered-list {
-      text-align: center;
-      list-style: none;
-      padding: 0; /* Remove default padding */
-      
-    }
-
-    .gray-link {
-      color: lightgray;
-      text-decoration: none;
-    }
-    .artists {
-      padding: 10px 10px;
-    }
-
-.content-container {
-  margin: 0 auto;
-  max-width: 390px; /* Keep your width limit */
-  overflow-y: auto; /* Only if you want the content itself to be scrollable */
-  height: calc(100vh - 60px); /* Adjust based on the actual footer height */
-  padding-bottom: 60px; /* Give some space for the footer */
-}
-
-
-.mmiaa-scroll-container {
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
-  width: 100vw; /* Ensure the container spans the full viewport width */
-}
-
-.header-text {
-  display: inline-block;
-  font-size: 40px;
-  font-weight: bold;
-  margin: 0;
-  animation: scroll-infinite 20s linear infinite;
-}
-
-@keyframes scroll-infinite {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 5px 0;
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-}
-
-
-.footer-link {
-  color: lightgray; /* Light gray link to match your existing design */
-  text-decoration: none; /* Removes underline from links */
-  font-size: 12px;
-}
-
-.footer-link:hover {
-  text-decoration: underline; /* Adds underline on hover for better UX */
-}
-
   </style>
 </head>
 <body>
   <div class="content-container">
-
-    <header>
+    <header onclick="window.location.href='index.html';"> <!-- Added onclick event -->
       <div class="mmiaa-scroll-container">
-        <h1 class="header-text" id="mmiaa">MMMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA </h1>
+        <h1 class="header-text">MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA</h1>
       </div>
     </header>
-    
-  </div>
-  <div class="section-list">
-    <div class="section">FILM & $TILL$</div>
-    <div class="paragraph-section">
-      <p>We own an extensive collection of <span class="bold-text">exclusive</span> and <span class="bold-text">experimental</span> films and imagery. With years of video editing experience in a one-of-a-kind <span class="bold-text">psychedelic</span> style, we will provide <span class="bold-text">hand-curated</span> and assembled imagery that will enhance the artistic vision and <span class="bold-text">marketability</span> of your art.</p>
-      <p><span class="bold-text">Fire</span> music only.</p>
-      <p><a href="film.html" class="light-gray-link">Samples and rates here.</a></p>
-    </div>
-    <div class="section">KNOIRE</div>
-    <div class="paragraph-section">
-      <p>KNOIRE is an interview series hosted by artist-turned-interviewer PDF. Through a series of <span class="bold-text">casual</span> Zoom-talks with artists across the underground, we seek to <span class="bold-text">connect</span> and empower <span class="bold-text">  Black</span> artists.</p>
-      <p><a href="https://www.youtube.com/watch?v=VIDEO_ID" class="light-gray-link">Watch here</a> | <a href="form.html" class="light-gray-link">Wanna talk?</a></p>
-    </div>
-    <div class="section">ARTI$T$</div>
-    <div class="paragraph-section">
-      <p>MMIAA seeks to unite the experimental <span class="bold-text">hip-hop</span> which inspired us with the <span class="bold-text">endless breadth</span> of sounds that makes up modern music with the ultimate priority of <span class="bold-text">Making Money in an Artform.</span></p>
-      <ul class="centered-list">
-        <li class="artists"><a href="#" class="light-gray-link">naye & myaliah</a></li>
-        <li class="artists"><a href="#" class="light-gray-link">PDF</a></li>
-        <li class="artists"><a href="#" class="light-gray-link">CH33$3C4K3</a></li>
-      </ul>
+    <div class="section">$AMPLE VIDEOS</div>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/tT3aTn-QPjs?autoplay=1&mute=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/ZgmodIeDZ2E?autoplay=1&mute=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/tT3aTn-QPjs?si=9GD2WeMGHrxvQ6Nf?autoplay=1&mute=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
     <footer>
-      <p><a href="mailto:connect@mmiaa.org" class="footer-link">connect@mmiaa.org</a></p>
+      <a href="mailto:connect@mmiaa.org" class="footer-link">connect@mmiaa.org</a>
     </footer>
-    
+    </div>
   </div>
-  <script>
-
-    
-
-  </script>
-  </div>
-
 </body>
-
 </html>
