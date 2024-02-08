@@ -34,8 +34,6 @@
   font-size: 40px;
   font-weight: bold;
   margin: 0;
-  opacity: 0; /* Initially hidden */
-  transition: opacity 1s; /* Smooth transition for opacity change */
 
 }
 
@@ -52,7 +50,6 @@
 .big-text {
   font-size: 28px;
   font-weight: bold;
-  transition: opacity 1s;
   padding: 0; /* Reduced or removed the large bottom padding */
 }
 
@@ -72,8 +69,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      opacity: 0; /* Initially hidden */
-      transition: opacity 1s; /* Smooth transition for opacity change */
+        padding-bnot
     }
 
     .section {
@@ -136,16 +132,13 @@
     .artists {
       padding: 10px 10px;
     }
-    .fade-in {
-  opacity: 1 !important;
-}
+
 .content-container {
   margin: 0 auto;
   max-width: 390px; /* Keep your width limit */
+  overflow-y: auto; /* Only if you want the content itself to be scrollable */
   height: calc(100vh - 60px); /* Adjust based on the actual footer height */
   padding-bottom: 60px; /* Give some space for the footer */
-  overflow: hidden; /* Prevent scrolling */
-
 }
 
 
@@ -161,8 +154,6 @@
   font-size: 40px;
   font-weight: bold;
   margin: 0;
-  /* Initially hidden, will fade in */
-  opacity: 0; /* Keep this for the fade-in effect */
   animation: scroll-infinite 20s linear infinite;
 }
 
@@ -175,12 +166,7 @@
   }
 }
 
-/* Adjust the fade-in effect as needed */
-@keyframes fade-in {
-  to {
-    opacity: 1;
-  }
-}
+
 footer {
   position: fixed;
   bottom: 0;
@@ -209,12 +195,10 @@ footer {
 
     <header>
       <div class="mmiaa-scroll-container">
-        <h1 class="header-text" id="mmiaa">MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA </h1>
+        <h1 class="header-text" id="mmiaa">MMMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA </h1>
       </div>
     </header>
     
-  <div class="text-container">
-    <div class="big-text" id="fade-out">Making Money in an Artform</div>
   </div>
   <div class="section-list">
     <div class="section">FILM & $TILL$</div>
@@ -243,42 +227,8 @@ footer {
     
   </div>
   <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(function() {
-        document.getElementById('fade-out').style.opacity = '0';
-        setTimeout(function() {
-            document.querySelector('.text-container').style.display = 'none';
-            document.querySelector('.section-list').style.opacity = '1';
-        }, 1000); // 1000 milliseconds = 1 second
-    }, 1000); // 1000 milliseconds = 1 second
 
-    setTimeout(function() {
-        for (let i = 0; i < 200; i++) {
-            const dollarSign = document.createElement('div');
-            dollarSign.classList.add('dollar-sign');
-            dollarSign.textContent = '$';
-            dollarSign.style.left = `${Math.random() * window.innerWidth}px`;
-            dollarSign.style.top = '-10%'; // Start just above the viewport
-
-            // Apply a random duration for each dollar sign to vary their speed slightly
-            const animationDuration = 2 + Math.random() * 3; // Between 5 and 7 seconds
-            dollarSign.style.animationDuration = `${animationDuration}s`;
-
-            document.body.appendChild(dollarSign);
-        }
-
-        // Transition handling for fading out text and showing section list
-        document.getElementById('fade-out').style.opacity = '0';
-        setTimeout(function() {
-            document.querySelector('.text-container').style.display = 'none';
-            document.querySelector('.section-list').style.opacity = '1';
-        }, 1000);
-    }, 1000);
-
-    setTimeout(function() {
-        document.getElementById('mmiaa').classList.add('fade-in');
-    }, 1000); // Adjust the delay as needed
-});
+    
 
   </script>
   </div>
