@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="/mmiaa/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MMIAA</title>
+
+</head>
+<body>
+  <div class="content-container">
+    <header onclick="window.location.href='index.html';"> <!-- Added onclick event -->
+      <div class="mmiaa-scroll-container">
+        <h1 class="header-text-other">MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA MMIAA</h1>
+      </div>
+    </header>
+    <div class="section">$AMPLE WORK</div>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/tT3aTn-QPjs?autoplay=1&mute=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/ZgmodIeDZ2E?autoplay=1&mute=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/_zETI7vKt7s?autoplay=1&mute=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <p><a href="https://www.youtube.com/@_mmiaa_" class="light-gray-link">see more</a></p>
+
+    </div>
+    <div class="section">$ERVICE$ OFFERED</div>
+    <div class="paragraph-section">
+      <p>With our unmatched repository of <span class="bold-text">one-of-a-kind</span> visuals and years of filmmaking experience, we can bring a new <span class="bold-text">visual language</span> to your audience.</p>
+      <ul class="centered-list">
+        <li class="artists"><a href="#" class="light-gray-link">experimental music visualizers</a></li>
+        <li class="artists"><a href="#" class="light-gray-link">album art</a></li>
+        <li class="artists"><a href="#" class="light-gray-link">merch design</a></li>
+        <li class="artists"><a href="#" class="light-gray-link">logos and typography</a></li>
+        <li class="artists"><a href="#" class="light-gray-link">music videos (NYC only)</a></li>
+
+      </ul>
+    </div>
+    <div class="section">RATE$</div>
+    <p>MMIAA visuals are <span class="bold-text">hand-curated</span> and compiled to realize the vision you have. As such, our prices <span class="bold-text">vary</span> based on the size, complexity, and input of your visuals. Hit us up with what you're looking for, and let's <span class="bold-text">MMIAA.</span></p>
+    <p><a href="https://forms.gle/pa51FSneu9HSURo46" class="light-gray-link">request art</a> | <a href="https://www.instagram.com/psychedufilm/" class="light-gray-link">instagram</a></p>
+    </div>
+  </div>
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Select all elements that should have the rainbow animation
+    var rainbowLinks = document.querySelectorAll('.light-gray-link, .footer-link');
+
+    rainbowLinks.forEach(function(link, index) {
+      // Assign a random or incremental delay, e.g., 0s, 2s, 4s, etc., to each link
+      // For a random delay, you can use: Math.random() * 5 + 's'; (up to 5 seconds in this example)
+      var delay = (index * 2) % 10 + 's'; // Example of an incremental delay that loops every 10 seconds
+      
+      link.style.animationDelay = delay;
+    });
+  });
+</script>
+
+</html>

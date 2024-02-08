@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Urbanist', sans-serif; /* Use Playfair Display for h1 elements */
+
+  }
+  html, body {
+height: 100vh; /* Viewport height */
+margin: 0;
+padding: 0;
+}
+
+  header {
+    padding: 20px 0;
+    background-color: black;
+    font-size: 36px;  font-family: 'Playfair Display', serif; /* Use Playfair Display for h1 elements */
+
+
+  }
+
+  .header-text-other {
+font-size: 40px;
+font-weight: bold;
+margin: 0;
+opacity: 0; /* Initially hidden */
+transition: opacity 1s; /* Smooth transition for opacity change */
+font-family: 'Playfair Display', serif; /* Use Playfair Display for h1 elements */
+
+}  .header-text-other {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  font-family: 'Playfair Display', serif; /* Use Playfair Display for h1 elements */
+  opacity: 1; /* Initially hidden */
+
+  }
+
+.text-container {
+display: flex;
+flex-direction: column;
+justify-content: center; /* Keeps content vertically centered */
+align-items: center; /* Keeps content horizontally centered */
+flex-grow: 1;
+padding: 20px 0; /* Adjusted padding for better spacing */
+min-height: 70vh; /* Ensure it takes at least the full height of the viewport */
+}
+
+.big-text {
+font-size: 28px;
+font-weight: bold;
+transition: opacity 1s;
+padding: 0; /* Reduced or removed the large bottom padding */
+font-family: 'Playfair Display', serif; /* Use Playfair Display for h1 elements */
+
+}
+
+
+
+  .medium-text {
+    font-size: 24px;
+    margin-bottom: 10px;
+    opacity: 1; /* Initial opacity set to 1 */
+  }
+
+  .small-text {
+    font-size: 18px;
+  }
+
+  .section-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s; /* Smooth transition for opacity change */
+  }
+
+  .section {
+    font-size: 24px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif; /* Use Playfair Display for h1 elements */
+
+  }
+
+  @keyframes rainAndShake {
+    0% { 
+      transform: translateY(-10%) rotate(0deg); 
+      opacity: 1; 
+    }
+    50% { 
+      transform: translateY(45vh) rotate(5deg); 
+    }
+    100% { 
+      transform: translateY(90vh) rotate(-5deg); 
+      opacity: 0; 
+    }
+  }
+
+  .dollar-sign {
+    position: fixed;
+    color: #d2f8d2;
+    font-size: 24px;
+    opacity: 0; /* Start fully transparent, but quickly become visible */
+    animation: rainAndShake linear forwards;
+    font-family: 'Playfair Display', serif; /* Use Playfair Display for h1 elements */
+
+  }
+
+  .paragraph-section {
+    margin: 0 20px; /* Add margin for mobile */
+  }
+
+  .bold-text {
+    font-weight: bold;
+  }
+
+  .light-gray-link, .footer-link {
+    font-family: 'Rock Salt', cursive; /* Use Rock Salt font */
+    background: linear-gradient(90deg, #c1adea, #ff7f50,  #ffffad, #89CFF0); /* Gradient from baby pink to baby blue to baby orange */
+background-size: 200% auto; /* Extend the background size for a smooth transition */
+color: transparent; /* Make the text color transparent */
+background-clip: text; /* Clip the background to the text */
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent; /* Specific to WebKit browsers */
+animation: rainbow-text 3s linear infinite; /* Apply the animation */
+display: inline; /* Ensure the background is clipped correctly */
+}
+
+  @keyframes rainbow-text {
+0% {background-position: 0% 50%;}
+50% {background-position: 100% 50%;}
+100% {background-position: 0% 50%;}
+}
+
+  .centered-list {
+    text-align: center;
+    list-style: none;
+    padding: 0; /* Remove default padding */
+    
+  }
+
+  .gray-link {
+    color: lightgray;
+    text-decoration: none;
+  }
+  .artists {
+    padding: 10px 10px;
+  }
+  .fade-in {
+opacity: 1 !important;
+}
+.content-container {
+margin: 0 auto;
+max-width: 390px; /* Keep your width limit */
+height: calc(100vh - 60px); /* Adjust based on the actual footer height */
+padding-bottom: 60px; /* Give some space for the footer */
+overflow-x: hidden; /* Prevent horizontal scrolling */
+overflow-y: scroll; /* Enable vertical scrolling */
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none; /* Firefox */
+}
+
+
+
+.mmiaa-scroll-container {
+white-space: nowrap;
+overflow: hidden;
+position: relative;
+width: 100vw; /* Ensure the container spans the full viewport width */
+}
+
+.header-text {
+display: inline-block;
+font-size: 40px;
+font-weight: bold;
+margin: 0;
+/* Initially hidden, will fade in */
+opacity: 0; /* Keep this for the fade-in effect */
+animation: scroll-infinite 20s linear infinite;
+}
+@keyframes scroll-left-right {
+0%, 100% {
+  transform: translateX(0%);
+}
+50% {
+  transform: translateX(-50%); /* Adjust based on the actual width to ensure seamless transition */
+}
+}
+
+.header-text {
+display: inline-block;
+font-size: 40px;
+font-weight: bold;
+margin: 0;
+/* Adjust animation duration as needed for smoothness */
+animation: scroll-left-right 20s linear infinite;
+}
+.header-text-other {
+  display: inline-block;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  /* Adjust animation duration as needed for smoothness */
+  animation: scroll-left-right 20s linear infinite;
+  }
+/* Adjust the fade-in effect as needed */
+@keyframes fade-in {
+to {
+  opacity: 1;
+}
+}
+footer {
+position: fixed;
+bottom: 0;
+width: 100%;
+padding: 5px 0;
+background-color: #000;
+color: #fff;
+text-align: center;
+}
+
+
+.footer-link {
+color: lightgray; /* Light gray link to match your existing design */
+text-decoration: none; /* Removes underline from links */
+font-size: 12px;
+}
+
+.footer-link:hover {
+text-decoration: underline; /* Adds underline on hover for better UX */
+}
+    /* Style for video container */
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px; /* Space between videos */
+    }
+    /* Style for videos */
+    iframe {
+      width: 100%; /* Full width of the container */
+      aspect-ratio: 1 / 1; /* Square aspect ratio */
+    }
