@@ -175,14 +175,22 @@
   opacity: 0; /* Keep this for the fade-in effect */
   animation: scroll-infinite 20s linear infinite;
 }
-
-@keyframes scroll-infinite {
-  0% {
+@keyframes scroll-left-right {
+  0%, 100% {
     transform: translateX(0%);
   }
-  100% {
-    transform: translateX(-50%);
+  50% {
+    transform: translateX(-50%); /* Adjust based on the actual width to ensure seamless transition */
   }
+}
+
+.header-text {
+  display: inline-block;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  /* Adjust animation duration as needed for smoothness */
+  animation: scroll-left-right 20s linear infinite;
 }
 
 /* Adjust the fade-in effect as needed */
