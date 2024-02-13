@@ -23,9 +23,7 @@ padding: 0;
 
 
   }
-#mmmiaa{  opacity: 0; /* Start fully transparent */
-  animation: fade-in 2s ease-out forwards;  /* Smooth transition for opacity change */
-}
+
   .header-text-other {
 font-size: 40px;
 font-weight: bold;
