@@ -54,11 +54,11 @@ min-height: 70vh; /* Ensure it takes at least the full height of the viewport */
 .big-logo {
 font-size: 28px;
 font-weight: bold;
-transition: opacity 2s;
+transition: opacity 0.5s;
 padding: 0; /* Reduced or removed the large bottom padding */
 font-family: 'Playfair Display', serif; /* Use Playfair Display for h1 elements */
 width: 500px;
-padding-bottom: 450px;
+padding-bottom: 200px;
 
 }
 
