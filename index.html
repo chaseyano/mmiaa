@@ -22,17 +22,27 @@
     </header>
     
   <div class="text-container">
-    <img src="logo.png" alt="Logo" class="big-logo" id="fade-out">
+    <img src="3sec.gif" alt="Logo" class="big-logo" id="gif-image">
   </div>
   <div class="section-list">
-    <div class="section">VI$UAL$</div>
+    <div class="section">$AMPLE$</div>
     <div class="paragraph-section">
-      <p>We have compiled an extensive collection of <span class="bold-text">exclusive</span> and <span class="bold-text">experimental</span> films and imagery. With years of filmmaking experience in a <span class="bold-text"> one-of-a-kind</span> style, we provide <span class="bold-text">hand-curated</span> and collaged imagery that will enhance the artistic vision and <span class="bold-text">marketability</span> of your art.</p>
-      <p><a href="makemoney.html" class="light-gray-link">samples and rates</a></p>
+      <div>
+        <p>MMIAA offers services which span the <span class="bold-text">infinite</span> possibilities of art, with a priority on getting <span class="bold-text">paid</span>.</p>
+        <p>We have compiled an extensive collection of <span class="bold-text">exclusive</span> and <span class="bold-text">experimental</span> films and imagery, with a one-of-a-kind video collaging style. Utilizing this mix of resources and skill, we deliver <span class="bold-text">visuals</span>, <span class="bold-text">design</span>, and <span class="bold-text">music videos</span>.</p>
+        <p>We offer <span class="bold-text">beats</span> made by artists with years of meticulous experimentation on the <span class="bold-text">MPC</span>.</p>
+        <p>We believe in the intersection of art and tech, and we provide <span class="bold-text">web design</span> and <span class="bold-text">software engineering</span> expertise aimed at delivering and marketing your art.</p>
+      </div>
+            <p><a href="makemoney.html" class="light-gray-link">work with us</a></p>
     </div>
     <div class="section">KNOIRE</div>
     <div class="paragraph-section">
       <p>KNOIRE is an interview series hosted by artist-turned-interviewer, PDF. Through a series of <span class="bold-text">casual</span> Zoom-talks with artists across the underground, we seek to <span class="bold-text">connect</span> and empower <span class="bold-text">  Black</span> artists.</p>
+      <span class="bold-text">Upcoming Guests</span>
+      <p><a href="https://www.instagram.com/semiratruth/" class="light-gray-link">semiratruth</a></p>
+      <p><a href="https://www.instagram.com/aleqth/" class="light-gray-link">aleqth</a></p>
+
+
       <p><a href="https://www.youtube.com/watch?v=VIDEO_ID" class="light-gray-link">watch soon</a> | <a href="https://forms.gle/YZpNtpmZqHNJGuWt8" class="light-gray-link">wanna talk?</a></p>
     </div>
     <div class="section">ARTI$T$</div>
@@ -50,55 +60,57 @@
     </footer>
   </div>
   <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(function() {
-        document.getElementById('fade-out').style.opacity = '0';
+    document.addEventListener('DOMContentLoaded', function() {
+        var gifDuration = 2400; // Duration of the GIF animation in milliseconds. Adjust this to match your GIF's duration.
+    
+        // Wait for the GIF animation to finish before starting the fade-out and dollar sign animations.
         setTimeout(function() {
-            document.querySelector('.text-container').style.display = 'none';
-            document.querySelector('.section-list').style.opacity = '1';
-        }, 1000); // 1000 milliseconds = 1 second
-    }, 1000); // 1000 milliseconds = 1 second
-
-    setTimeout(function() {
-        for (let i = 0; i < 200; i++) {
-            const dollarSign = document.createElement('div');
-            dollarSign.classList.add('dollar-sign');
-            dollarSign.textContent = '$';
-            dollarSign.style.left = `${Math.random() * window.innerWidth}px`;
-            dollarSign.style.top = '-10%'; // Start just above the viewport
-
-            // Apply a random duration for each dollar sign to vary their speed slightly
-            const animationDuration = 2 + Math.random() * 3; // Between 5 and 7 seconds
-            dollarSign.style.animationDuration = `${animationDuration}s`;
-
-            document.body.appendChild(dollarSign);
-        }
-
-        // Transition handling for fading out text and showing section list
-        document.getElementById('fade-out').style.opacity = '0';
+            document.getElementById('gif-image').style.opacity = '0';
+            setTimeout(function() {
+                document.querySelector('.text-container').style.display = 'none';
+                document.querySelector('.section-list').style.opacity = '1';
+            }, 500);
+        }, gifDuration); // Start this after the GIF finishes
+    
+        // Delayed start for the dollar signs animation
         setTimeout(function() {
-            document.querySelector('.text-container').style.display = 'none';
-            document.querySelector('.section-list').style.opacity = '1';
-        }, 1000);
-    }, 1000);
-
-    setTimeout(function() {
-        document.getElementById('mmiaa').classList.add('fade-in');
-    }, 1000); // Adjust the delay as needed
-});
-document.addEventListener('DOMContentLoaded', function() {
-    // Select all elements that should have the rainbow animation
-    var rainbowLinks = document.querySelectorAll('.light-gray-link, .footer-link');
-
-    rainbowLinks.forEach(function(link, index) {
-      // Assign a random or incremental delay, e.g., 0s, 2s, 4s, etc., to each link
-      // For a random delay, you can use: Math.random() * 5 + 's'; (up to 5 seconds in this example)
-      var delay = (index * 2) % 10 + 's'; // Example of an incremental delay that loops every 10 seconds
-      
-      link.style.animationDelay = delay;
+            for (let i = 0; i < 200; i++) {
+                const dollarSign = document.createElement('div');
+                dollarSign.classList.add('dollar-sign');
+                dollarSign.textContent = '$';
+                dollarSign.style.left = `${Math.random() * window.innerWidth}px`;
+                dollarSign.style.top = '-10%'; // Start just above the viewport
+    
+                const animationDuration = 2 + Math.random() * 3; // Between 2 and 5 seconds
+                dollarSign.style.animationDuration = `${animationDuration}s`;
+    
+                document.body.appendChild(dollarSign);
+            }
+        }, gifDuration+100); // Start this after the GIF finishes and adds a delay for setup
+    
+        // Adjusted start for the header text fade-in animation
+        setTimeout(function() {
+            document.getElementById('mmiaa').classList.add('fade-in');
+        }, 0); // Adjust to start after the GIF finishes
+    
+        // Rainbow link animation with adjusted timing
+        setTimeout(function() {
+            var rainbowLinks = document.querySelectorAll('.light-gray-link, .footer-link');
+    
+            rainbowLinks.forEach(function(link, index) {
+              var delay = (index * 2) % 10 + 's';
+              link.style.animationDelay = delay;
+            });
+        }, gifDuration); // Adjust to start after the GIF finishes
     });
-  });
-  </script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var gifImage = document.getElementById('gif-image');
+    var uniqueTimeStamp = new Date().getTime(); // Get the current timestamp
+    gifImage.src = '3sec.gif?timestamp=' + uniqueTimeStamp; // Append the timestamp as a query parameter
+});
+
+    </script>
+    
   </div>
 
 </body>
