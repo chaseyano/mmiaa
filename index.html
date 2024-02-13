@@ -61,54 +61,54 @@
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Initial delay to allow GIF to download
+        var gifDuration = 2400; // Duration of the GIF animation in milliseconds. Adjust this to match your GIF's duration.
+    
+        // Wait for the GIF animation to finish before starting the fade-out and dollar sign animations.
         setTimeout(function() {
-            var gifDuration = 2400; // Duration of the GIF animation in milliseconds.
-            
-            // Proceed with the rest of the script after the initial delay
+            document.getElementById('gif-image').style.opacity = '0';
             setTimeout(function() {
-                document.getElementById('gif-image').style.opacity = '0';
-                setTimeout(function() {
-                    document.querySelector('.text-container').style.display = 'none';
-                    document.querySelector('.section-list').style.opacity = '1';
-                }, 500);
-            }, gifDuration); // Start this after the GIF finishes
-            
-            // Delayed start for the dollar signs animation
-            setTimeout(function() {
-                for (let i = 0; i < 200; i++) {
-                    const dollarSign = document.createElement('div');
-                    dollarSign.classList.add('dollar-sign');
-                    dollarSign.textContent = '$';
-                    dollarSign.style.left = `${Math.random() * window.innerWidth}px`;
-                    dollarSign.style.top = '-10%'; // Start just above the viewport
-            
-                    const animationDuration = 2 + Math.random() * 3; // Between 2 and 5 seconds
-                    dollarSign.style.animationDuration = `${animationDuration}s`;
-            
-                    document.body.appendChild(dollarSign);
-                }
-            }, gifDuration + 100); // Start this after the GIF finishes and adds a delay for setup
-            
-            // Adjusted start for the header text fade-in animation
+                document.querySelector('.text-container').style.display = 'none';
+                document.querySelector('.section-list').style.opacity = '1';
+            }, 500);
+        }, gifDuration); // Start this after the GIF finishes
+    
+        // Delayed start for the dollar signs animation
+        setTimeout(function() {
+            for (let i = 0; i < 200; i++) {
+                const dollarSign = document.createElement('div');
+                dollarSign.classList.add('dollar-sign');
+                dollarSign.textContent = '$';
+                dollarSign.style.left = `${Math.random() * window.innerWidth}px`;
+                dollarSign.style.top = '-10%'; // Start just above the viewport
+    
+                const animationDuration = 2 + Math.random() * 3; // Between 2 and 5 seconds
+                dollarSign.style.animationDuration = `${animationDuration}s`;
+    
+                document.body.appendChild(dollarSign);
+            }
+        }, gifDuration+100); // Start this after the GIF finishes and adds a delay for setup
+    
+        // Adjusted start for the header text fade-in animation
+        setTimeout(function() {
             document.getElementById('mmiaa').classList.add('fade-in');
-            
-            // Rainbow link animation with adjusted timing
-            setTimeout(function() {
-                var rainbowLinks = document.querySelectorAll('.light-gray-link, .footer-link');
-                rainbowLinks.forEach(function(link, index) {
-                    var delay = (index * 2) % 10 + 's';
-                    link.style.animationDelay = delay;
-                });
-            }, gifDuration); // Adjust to start after the GIF finishes
+        }, 0); // Adjust to start after the GIF finishes
     
-        }, 2000); // Initial delay before starting the script
+        // Rainbow link animation with adjusted timing
+        setTimeout(function() {
+            var rainbowLinks = document.querySelectorAll('.light-gray-link, .footer-link');
     
-        // Refresh GIF for replay
-        var gifImage = document.getElementById('gif-image');
-        var uniqueTimeStamp = new Date().getTime();
-        gifImage.src = '3sec.gif?timestamp=' + uniqueTimeStamp;
+            rainbowLinks.forEach(function(link, index) {
+              var delay = (index * 2) % 10 + 's';
+              link.style.animationDelay = delay;
+            });
+        }, gifDuration); // Adjust to start after the GIF finishes
     });
+    document.addEventListener('DOMContentLoaded', function() {
+    var gifImage = document.getElementById('gif-image');
+    var uniqueTimeStamp = new Date().getTime(); // Get the current timestamp
+    gifImage.src = '3sec.gif?timestamp=' + uniqueTimeStamp; // Append the timestamp as a query parameter
+});
+
     </script>
     
   </div>
