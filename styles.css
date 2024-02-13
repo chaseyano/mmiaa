@@ -40,17 +40,17 @@ font-family: 'Playfair Display', serif; /* Use Playfair Display for h1 elements 
   opacity: 1; /* Initially hidden */
 
   }
-
-.text-container {
-display: flex;
-flex-direction: column;
-justify-content: center; /* Keeps content vertically centered */
-align-items: center; /* Keeps content horizontally centered */
-flex-grow: 1;
-padding: 20px 0; /* Adjusted padding for better spacing */
-min-height: 70vh; /* Ensure it takes at least the full height of the viewport */
-}
-
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Keeps content horizontally centered */
+    padding: 20px 0; /* Adjusted padding for better spacing */
+    /* Removed flex-grow and min-height to prevent it from expanding and ensure it stays at the top */
+    margin-top: 0px; /* Ensure it starts at the top of its parent container */
+    margin-bottom: 0px; /* Adjust if you need to control space below the container */
+    /* If you specifically need to control the vertical positioning, consider using justify-content on the parent container */
+  }
+  
 .big-logo {
 font-size: 28px;
 font-weight: bold;
@@ -58,11 +58,11 @@ transition: opacity 0.5s;
 padding: 0; /* Reduced or removed the large bottom padding */
 font-family: 'Playfair Display', serif; /* Use Playfair Display for h1 elements */
 width: 500px;
-padding-bottom: 900px;
 
 }
 #gif-image {
-  margin-bottom: 300px;
+  margin-bottom: -500px; /* Pull up the element by applying a negative bottom margin */
+
 }
 
 
