@@ -58,10 +58,12 @@ transition: opacity 0.5s;
 padding: 0; /* Reduced or removed the large bottom padding */
 font-family: 'Playfair Display', serif; /* Use Playfair Display for h1 elements */
 width: 500px;
-padding-bottom: 200px;
+padding-bottom: 900px;
 
 }
-
+#gif-image {
+  margin-bottom: 300px;
+}
 
 
   .medium-text {
